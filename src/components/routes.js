@@ -4,6 +4,6 @@ import Home from './home'
 
 export default (
     <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' Component={Home}/>
     </Switch>
 )

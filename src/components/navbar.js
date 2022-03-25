@@ -1,46 +1,117 @@
-import React from 'react'
+import React, {Component} from 'react'
+import '../style/navbar'
 
+class Navbar extends Component{
+    render(){
+        return(
+            <div className='Navbar-Container'>
+                <div className='black-bar'>
 
+                    <span>
+                    <i class="fas fa-map-marker-alt" style={{color:'white'}}></i>
+                    <h1>Location Services Coming Soon</h1>
+                    </span>
 
-import '../style/navbar.scss'
+                    <span>
+                    <i class="fas fa-clipboard-list" style={{color:'white'}}></i>
+                    <h1>Check an Order</h1>
+                    </span>
 
-function Navbar() {
-    return (
-        <div className='navbar'>
-            < Navbar />
-            <div className='shop-dropdown'>
+                    <span>
+                    <i class="far fa-question-circle" style={{color:'white'}}></i>
+                    <h1>Help</h1>
+                    </span>
 
-            </div>
-            <img className='navbar_logo'
-                src="https://upload.wikimedia.org/wikipedia/commons/6/63/GameStop.svg">
-            </img>
+                    <div className='black-filler'/>
+                </div>
+                <div className='Navbar-Top'>
+                    <img src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwb103fa93/images/svg-icons/logo-1280.svg"/>
+                        <div>
+                        <span className='Search-Bar'>
+                         <i class="fas fa-search"></i>
+                         <input placeholder='Find games, consoles, tablets, and more' className='Header-Search-Bar'/>
+                         <button className='Navbar-Search'>SEARCH</button>
+                         </span>
+                        </div>
+                    <div className='Navbar-Links-Top-Container'>
+                        <span>
+                        <i class="fas fa-sync-alt" style={{color:'red'}}></i>
+                        <h6>Trade-Ins</h6>
+                        </span>
 
-            <div className='navbar_search'>
-                <input className='navbar_search_input' type="text" />
-                {/* LOGO */}
-            </div>
+                        <span>
+                        <i class="fas fa-power-off"></i>
+                        <h6>PowerUp Rewards</h6>
+                        </span>
 
-            <div className='navbar_header'>
-                <div className='tradein_option'>
-                    <span
-                        className='game_tradein'>Trade-Ins</span>
+                        <span>
+                        <i class="far fa-user"></i>
+                        <h6>Account</h6>
+                        </span>
+
+                        <span id="Last-Link">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h6>Cart</h6>
+                        </span>
+                    </div>
+                    
                 </div>
 
-                <div className='powerup_option'>
-                    <span
-                        className='powerup'>PowerUp Rewards</span>
+                <div className='Navbar-Bottom-Wrapper'>
+                    <div className='Navbar-Bottom'>
+                        <div>
+                        <h1>VIDEO GAMES</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>ACCESSORIES</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>TOYS & COLLECTIBLES</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>ELECTRONICS</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>CLOTHING</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>DEALS</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>WEEKLY AD</h1>
+                        </div>
+
+                        <span></span>
+
+                        <div>
+                        <h1>GIFT CARDS</h1>
+                        </div>
+                        
+                    </div>
                 </div>
-
-                <div className='signin_option'>
-                    <span
-                        className='account login'>Sign In</span>
-                </div>
-
-
+                
             </div>
 
-        </div>
-    )
+        
+        )
+    }
 }
-
 export default Navbar

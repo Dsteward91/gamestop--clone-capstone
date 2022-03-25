@@ -1,14 +1,15 @@
 import React from 'react';
 import {HashRouter as Router} from 'react-router-dom'
-
-import Routes from './routes'
+import routes from './routes'
+import '../style/reset'
+import Home from './home'
 
 function App() {
   return (
-    
-    <Router>   
+    <Router>
       <div className="App">
-        {Routes}
+        <Home />
+        {routes}
       </div>
     </Router>
   );
