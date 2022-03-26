@@ -15,10 +15,9 @@ class Product(db.Model):
     product = db.Column(db.String, nullable=False)
     price = db.Column(db.String, nullable=False)
 
-    def __init__(self,product, price):
+    def __init__(self, product, price):
         self.product = product
-        self.price = price
-        
+        self.price = price        
 
 class productSchema(ma.Schema):
     class Meta:
@@ -42,9 +41,9 @@ def add_product():
 
     return jsonify(product_schema.dump(record))
 
-@app.route("/product/get/ <id>", methods=["GET"])
-def get_product_by_id(id):
-    record = db.session.querry(Product).filter(Product.id == id).first()
+@app.route("/product/get/", methods=["GET"])
+def get_all_product():
+    record = db.session.query(Product).filter(Product.id == id).all()
     return jsonify(product_schema.dump(record))
 
 @app.route("/product/update", methods=["PUT"])
