@@ -1,19 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {HashRouter as Router} from 'react-router-dom'
-import { Switch, Route } from "react-router"
-
+import routes from './routes'
 import '../style/reset'
-import Home from './home'
 
-
-export default class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        {routes}
       </div>
-    )
-  }
+    </Router>
+  );
 }
+
+export default App;

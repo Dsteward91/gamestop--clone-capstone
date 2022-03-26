@@ -1,3 +1,4 @@
+from itertools import product
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -41,10 +42,10 @@ def add_product():
 
     return jsonify(product_schema.dump(record))
 
-@app.route("/product/get/", methods=["GET"])
-def get_all_product():
-    record = db.session.query(Product).filter(Product.id == id).all()
-    return jsonify(product_schema.dump(record))
+@app.route("/product/get", methods=["GET"])
+def get_all_users():
+    records = db.session.query(Product).all()
+    return jsonify(multiple_product_schema.dump(records))
 
 @app.route("/product/update", methods=["PUT"])
 def update_product_by_id(id):
