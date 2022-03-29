@@ -25,3 +25,8 @@
 .indicators > button {
     margin: 5px;
 }
+
+.indicators > button.active {
+    background-color: red;
+    color: black;
+}
