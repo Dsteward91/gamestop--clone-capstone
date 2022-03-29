@@ -1,10 +1,15 @@
 import React, {Component} from 'react'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 import '../style/navbar'
+
 
 class Navbar extends Component{
     render(){
         return(
             <div className='Navbar-Container'>
+                
                 <div className='black-bar'>
 
                     <span>
@@ -28,7 +33,7 @@ class Navbar extends Component{
                     <img src="https://www.gamestop.com/on/demandware.static/Sites-gamestop-us-Site/-/default/dwb103fa93/images/svg-icons/logo-1280.svg"/>
                         <div>
                         <span className='Search-Bar'>
-                         <i class="fas fa-search"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                          <input placeholder='Find games, consoles, tablets, and more' className='Header-Search-Bar'/>
                          <button className='Navbar-Search'>SEARCH</button>
                          </span>
@@ -40,17 +45,17 @@ class Navbar extends Component{
                         </span>
 
                         <span>
-                        <i class="fas fa-power-off"></i>
+                        <i class="fas fa-power-off" style={{color:'red'}}></i>
                         <h6>PowerUp Rewards</h6>
                         </span>
 
                         <span>
-                        <i class="far fa-user"></i>
+                        <i class="far fa-user" style={{color:'red'}}></i>
                         <h6>Account</h6>
                         </span>
 
                         <span id="Last-Link">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-shopping-cart" style={{color:'red'}}></i>
                         <h6>Cart</h6>
                         </span>
                     </div>
