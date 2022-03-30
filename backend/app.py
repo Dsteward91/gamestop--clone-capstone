@@ -20,12 +20,29 @@ class Product(db.Model):
         self.product = product
         self.price = price        
 
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String, nullable=False, unique=True)
+    password = db.Column(db.String, nullable=False)
+
+    def __init__(self, username, password):
+        self.username = username 
+        self.password = password 
+        
+
 class productSchema(ma.Schema):
     class Meta:
         fields = ("id", "product", "price")
 
 product_schema = productSchema()
 multiple_product_schema = productSchema(many=True)
+
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "username")
+
+user_schema = UserSchema()
+multiple_user_schema = UserSchema(many=True)
 
 @app.route("/product/add", methods=["POST"])
 def add_product():
@@ -63,6 +80,49 @@ def update_product_by_id(id):
     db.session.commit()
 
     return jsonify(product_schema.dump(record))
+
+@app.route("/user/add", methods=["POST"])
+def add_user():
+    if request.content_type != "application/json":
+        return jsonify("Error:Data must be sent as json")
+
+    post_data = request.get_json()
+    username = post_data.get("username")
+    password = post_data.get("password")
+
+    record_check = db.session.query(User).filter(User.username == username).first()
+    if record_check is not None:
+        return jsonify("Error: Username already exists.")
+
+    record = User(username,password)
+    db.session.add(record)
+    db.session.commit()
+    
+    return jsonify(user_schema.dump(record))
+
+@app.route("/user/get", methods= ["GET"])
+def get_user():
+    record = db.session.query(User).first()
+    return jsonify(user_schema.dump(record))
+
+@app.route("/user/login", methods=["POST"])
+def login():
+    if request.content_type != "application/json":
+        return jsonify("Error: Data Must be sent as JSON")
+
+    post_data = request.get_json()
+    username = post_data.get("username")
+    password = post_data.get("password")
+
+    record = db.session.query(User).filter(User.username == username).first()
+    if record is None:
+        return jsonify("User NOT verified")
+    
+    if record.password != password:
+        return jsonify("User Not verified")
+
+    return jsonify("User verified")
+
 
 
      

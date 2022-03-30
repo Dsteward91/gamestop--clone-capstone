@@ -5,12 +5,18 @@
     flex-direction: column;
     box-shadow: 1px 0px 3px 3px #DCDCDC
 }
+
+
 .Navbar-Top{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 20px 12px 0px
+}
+
+.Navbar-Top :link {
+    border-bottom: 1 px solid transparent;
 }
 .Navbar-Bottom{
     display: flex;

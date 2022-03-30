@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
@@ -35,28 +36,29 @@ class Navbar extends Component{
                         <span className='Search-Bar'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                          <input placeholder='Find games, consoles, tablets, and more' className='Header-Search-Bar'/>
-                         <button className='Navbar-Search'>SEARCH</button>
+                         <Link to="/products">
+                         <button className='Navbar-Search'>SEARCH</button></Link>
                          </span>
                         </div>
                     <div className='Navbar-Links-Top-Container'>
                         <span>
                         <i className="fas fa-sync-alt" style={{color:'red'}}></i>
-                        <h6>Trade-Ins</h6>
+                        <Link to= "./tradeIns">Trade-Ins</Link>
                         </span>
 
                         <span>
                         <i className="fas fa-power-off" style={{color:'red'}}></i>
-                        <h6>PowerUp Rewards</h6>
+                        <Link to= "./powerUpRewards">PowerUp Rewards</Link>
                         </span>
 
                         <span>
                         <i className="far fa-user" style={{color:'red'}}></i>
-                        <h6>Account</h6>
+                        <Link to= "./account">Account</Link>
                         </span>
 
                         <span id="Last-Link">
                         <i className="fas fa-shopping-cart" style={{color:'red'}}></i>
-                        <h6>Cart</h6>
+                        <Link to= "./cart">Cart</Link>
                         </span>
                     </div>
                     
