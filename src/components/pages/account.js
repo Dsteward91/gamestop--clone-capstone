@@ -27,7 +27,7 @@ export default class Account extends Component {
     handleSubmit(event) {
         event.preventDefault()
 
-        fetch("", {
+        fetch("(http://127.0.0.1:5000/user/login)", {
            method: "POST",
            headers: { "content-type": "application/json" },
            body: JSON.stringify({

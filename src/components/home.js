@@ -10,6 +10,7 @@ class Home extends Component{
         return(
             <div className='main-home-container'>
                 <Navbar />
+                <span>  </span>
                 <Carousel>
                     <CarouselItem><img src='https://i02.hsncdn.com/is/image/HomeShoppingNetwork/prodzoom/legend-of-zelda-breath-of-the-wild-nintendo-switch-d-20201221152633157~9840474w.jpg' alt='first Slide'/></CarouselItem>
                     <CarouselItem><img src='https://i.imgur.com/eWrlHAV.jpeg' alt='second Slide'></img></CarouselItem>
