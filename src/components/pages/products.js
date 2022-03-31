@@ -17,13 +17,13 @@ export default class App extends Component {
             const now = new Product()
             let productData = {}
 
-            await fetch("https://127.0.0.1:5000/product/get")     
+            await fetch("https://gamestopclone.herokuapp.com/product/get")     
             .then(response => response.json())
             .then(data => productData = data)
             .catch(error => console.log("Error getting product", error))
             
             
-            fetch("https://127.0.0.1:5000/product/get")
+            fetch("https://gamestopclone.herokuapp.com/product/get")
             .then(response => response.json())
             .then(data => this.setState({ data }))
             .catch(error => console.log("Error getting product", error))
