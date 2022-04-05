@@ -1,10 +1,16 @@
+@media ( max-width: 992px) {
+    .container {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
 .Navbar-Container{
     width: 100vw;
-    height: 40vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     box-shadow: 1px 0px 3px 3px #DCDCDC;
-    padding: 0px;
+    padding: 0px 0px 30px 0px;
 }
 
 
@@ -17,6 +23,11 @@
     padding: 20px 12px 0px;
     text-decoration: none;
 
+}
+
+.Navbar-Top img {
+    display: flex;
+    align-items: left;
 }
 
 .Navbar-Top :link {
@@ -76,10 +87,11 @@
 }
 .black-bar{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: black;
     height: 4.4vh;
     align-items: center;
+    justify-content: space-evenly;
 }
 .black-bar h1{
     font-family: 'Montserrat', sans-serif;

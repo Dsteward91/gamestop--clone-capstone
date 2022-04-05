@@ -36,28 +36,28 @@ class Navbar extends Component{
                         <span className='Search-Bar'>
                         <i className="fa-solid fa-magnifying-glass"></i>
                         <input placeholder='Find games, consoles, tablets, and more' className='Header-Search-Bar'/>
-                        <Link to="/products"><button className='Navbar-Search'>SEARCH</button> </Link>
+                        <Link to="/product" >< button className='Navbar-Search'>SEARCH</button></Link>
                         </span>
                     </div>
                     <div className='Navbar-Links-Top-Container'>
                         <span>
                         <i className="fas fa-sync-alt" style={{color:'red'}}></i>
-                        <Link to= "/tradeIns">Trade-Ins</Link>
+                            <h4>Trade-Ins</h4>
                         </span>
 
                         <span>
                         <i className="fas fa-power-off" style={{color:'red'}}></i>
-                        <Link to= "/powerUpRewards">PowerUp Rewards</Link>
+                            <h4>PowerUp Rewards</h4>
                         </span>
 
                         <span>
                         <i className="far fa-user" style={{color:'red'}}></i>
-                        <Link to= "/account">Account</Link>
+                            <Link to= "/account">Account</Link>
                         </span>
 
                         <span id="Last-Link">
                         <i className="fas fa-shopping-cart" style={{color:'red'}}></i>
-                        <Link to= "/cart">Cart</Link>
+                            <h4>Cart</h4>
                         </span>
                     </div>
                     

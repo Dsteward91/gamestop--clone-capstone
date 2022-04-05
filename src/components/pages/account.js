@@ -27,7 +27,7 @@ export default class Account extends Component {
     handleSubmit(event) {
         event.preventDefault()
 
-        fetch("(https://gamestopclone.herokuapp.com/user/login)", {
+        fetch(("https://gamestopclone.herokuapp.com/user/login"), {
            method: "POST",
            headers: { "content-type": "application/json" },
            body: JSON.stringify({

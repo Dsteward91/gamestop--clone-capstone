@@ -17,6 +17,10 @@
     color: #fff;
 }
 
+.carousel-item img {
+    padding-top: 400px;
+}
+
 .indicators {
     display: flex;
     justify-content: center;
@@ -30,3 +34,4 @@
     background-color: red;
     color: black;
 }
+
