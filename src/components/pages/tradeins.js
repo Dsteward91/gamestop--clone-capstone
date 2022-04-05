@@ -3,9 +3,11 @@
 import React, { Component } from "react";
 import axios from "axios";
 import DropzoneComponent from "react-dropzone-component";
-import RichTextEditor from "./rich-text-editor"
+import RichTextEditor from "RichTextEditor"
 
-export default class ProductForm extends Component {
+import Navbar from './navbar'
+
+export default class TradeInForm extends Component {
   constructor(props) {
     super(props);
 
@@ -144,6 +146,7 @@ export default class ProductForm extends Component {
 
   render() {
     return (
+      <Navbar />
       <form onSubmit={this.handleSubmit} className="blog-form-wrapper">
         <div className="two-column">
           <input

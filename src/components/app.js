@@ -4,7 +4,7 @@ import Product from './pages/product'
 import routes from './routes'
 import '../style/reset'
 import '../style/base'
-import ProductAdd from './pages/productform'
+
 
 
 
