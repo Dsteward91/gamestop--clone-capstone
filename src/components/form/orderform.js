@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from 'axios'
-
-import orderform from '../../style/orderform'
 import Navbar from '../navbar'
 
 export default class AddProduct extends Component {
