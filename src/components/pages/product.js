@@ -23,7 +23,7 @@ export default class Product extends Component {
                 .get("https://gamestopclone.herokuapp.com/product/get")
                 .then((response) => {
                     this.setState({
-                    products: response.data.productData,
+                    products: response.data.data,
                     });
                 })
                 .catch((error) => {
@@ -69,17 +69,17 @@ export default class Product extends Component {
 //   }
 
 //   getProducts() {
-    axios
-      .get("https://gamestopclone.herokuapp.com/product/get")
-      .then((response) => {
-        this.setState({
-          products: response.data.productData,
-        });
-      })
-      .catch((error) => {
-        console.log("error getting products", error);
-      });
-  }
+//     axios
+//       .get("https://gamestopclone.herokuapp.com/product/get")
+//       .then((response) => {
+//         this.setState({
+//           products: response.data.productData,
+//         });
+//       })
+//       .catch((error) => {
+//         console.log("error getting products", error);
+//       });
+//   }
 
 //   componentWillMount() {
 //     this.getProducts();
