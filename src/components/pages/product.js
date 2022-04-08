@@ -1,95 +1,79 @@
-import React, { Component }from 'react'; 
-import axios from 'axios'
-import ProductInfo from './productfiller'
+    import React, { Component } from 'react'
+import Navbar from '../navbar'
 
-
-import '../../style/products'
-
-
-export default class Product extends Component {
-
-    constructor() {
-        super()
+export default class Products extends Component {
+    constructor(props) {
+        super(props)
 
         this.state = {
-            data: []        
+            products: [],
+            loading: true,
+            error: false
         }
-        this.getProducts = this.getProducts.bind(this)
     }
 
-          
-        getProducts() {
-            axios
-                .get("https://gamestopclone.herokuapp.com/product/get")
-                .then((response) => {
-                    this.setState({
-                    products: response.data.data,
-                    });
-                })
-                .catch((error) => {
-                    console.log("error getting products", error);
-                });
-            }
-    componentDidMount() { 
-        this.getProducts();
+    componentDidMount() {
+        fetch("https://gamestopclone.herokuapp.com/product/get")
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                products: data,
+                loading: false
+            })
+        })
+        .catch(error => {
+            console.log("Error getting products ", error)
+            this.setState({
+                error: true,
+                loading: false
+            })
+        })
     }
-    
-    render() {
-        const { data } = this.state;
-        return (                            
-                
-            <div className="content-wrapper">      
-                {data.map((data) => (
-                    <div className='products'>
-                        <p className="product">{this.state.data.product}</p> 
-                        <p className="price">{this.state.data.price}</p> 
-                        
-                    </div>
-                ))}
-                    
+
+    renderProducts() {
+        const productsHtml = this.state.products.map(products => (
+            <div className="product-wrapper" key={products.id}>
+                <h3>{products.product}</h3>
+                <p>${products.price}</p>
             </div>
-            
-        );
-    }}
+        ))
 
+        return productsHtml
+    }
 
-// import React, { Component } from "react";
-// import axios from "axios";
-// import ProductInfo from './productfiller'
+    render() {
+        if (this.state.loading) {
+            return (
+                <div className='product-page-wrapper'>
+                    <h2>Products</h2>
+                    <div className='product-wrapper'>
+                        <div className="loading">Loading...</div>
+                    </div>
+                </div>
+            )
+        }
 
-// export default class SiteProducts extends Component {
-//   constructor() {
-//     super();
+        else if (this.state.error) {
+            return (
+                <div className='product-page-wrapper'>
+                    <h2>Products</h2>
+                    <div className='product-wrapper'>
+                        <div className="error">An error occured... Please try again later.</div>
+                    </div>
+                </div>
+            )
+        }
 
-//     this.state = {
-//       productData: [],
-//     };
-
-//     this.getProducts = this.getProducts.bind(this);
-//   }
-
-//   getProducts() {
-//     axios
-//       .get("https://gamestopclone.herokuapp.com/product/get")
-//       .then((response) => {
-//         this.setState({
-//           products: response.data.productData,
-//         });
-//       })
-//       .catch((error) => {
-//         console.log("error getting products", error);
-//       });
-//   }
-
-//   componentWillMount() {
-//     this.getProducts();
-//   }
-
-//   render() {
-//     const productRecords = this.state.products.map((products) => {
-//       return <Products key={products.id} products={products} />;
-//     });
-
-//     return <div>{productRecords}</div>;
-//   }
-// }
+        else {
+            return (
+                <div className='product-page-wrapper'>
+                    <Navbar />
+                    <h2>Products</h2>
+                    <div className="product-wrapper">
+                        {this.renderProducts()}
+                    </div>
+                </div>
+            )
+        }
+    }
+}

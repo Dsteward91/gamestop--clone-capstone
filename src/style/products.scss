@@ -1,7 +1,29 @@
-
-
-.content-wrapper  {
+.product-page-wrapper {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    justify-items:center;
+
+
+    .product-wrapper {
+        margin-top: 22px;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-items: center;
+        padding-bottom: 22px;
+    
+        .product-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: white;
+            padding: 5px;
+        }
+    }
 }

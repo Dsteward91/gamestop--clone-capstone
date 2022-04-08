@@ -1,0 +1,91 @@
+@media (max-width: 680px) {
+    .Navbar-Container{
+        width: 100vw;
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 1px 0px 3px 3px #DCDCDC;
+        padding: 0px 0px 30px 0px;
+    
+    
+    
+        .Navbar-Top{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 12px 0px;
+            text-decoration: none;
+            width: 100vw;
+            background-color:maroon;
+        
+        }
+        
+        .Navbar-Top img {
+            display: flex;
+            align-items: left;
+            height: 55px;
+            width: 155px;
+        }
+        
+        .Navbar-Top :link {
+            border-bottom: 1 px solid transparent;
+            text-decoration: black;
+            cursor: pointer;
+        
+            
+            & :hover {
+                text-decoration: #DA362C;
+                
+            }
+        }
+        
+        .Navbar-Search{
+            background-color: #DA362C;
+            color: white;
+            height: 50px;
+            border: none;
+            border-radius: 0px 5px 5px 0px;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0px 18px;
+            font-size: 11px;
+            font-weight: 1000;
+        }
+        .Search-Bar{
+            position: relative;
+            display: flex;
+        }
+        .Search-Bar i{
+            position: absolute;
+            top: 18px;
+            left: 40px
+        }
+        
+        .Navbar-Links-Top-Container{
+            display: flex;
+            width: 400px;
+            flex-direction: row;
+            align-items:center;
+            justify-content:center;
+        }
+        .Navbar-Search-Bar{
+            display:flex;
+            justify-content:center;
+            height: 50px;
+            width: 350px;
+            background: #F6F6F6;
+            border: 1px solid #d9d9d9;
+            margin-left: 30px
+        }
+        .Search-Bar input:focus{
+            border: 1px solid black;
+            outline: none;
+        }
+        .Search-Bar input:focus::-webkit-input-placeholder{
+            color: transparent;
+        }
+    }
+
+  
+}
